@@ -7,6 +7,7 @@ Final project -'Electricity Consumption Dashboard'
 
 #Importing the modules 
 import streamlit as st 
+import plotly
 import plotly.express as px
 import pandas as pd 
 
