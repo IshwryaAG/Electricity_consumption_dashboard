@@ -9,7 +9,7 @@ Final project -'Electricity Consumption Dashboard'
 import streamlit as st 
 import plotly
 import plotly.express as px
-import plotly.figure_factory as ff
+#import plotly.figure_factory as ff
 import pandas as pd 
 
 st.title('Electricity Consumption Dashboard') #Displays the title of the dashboard
@@ -51,7 +51,7 @@ sum_dftemp= dftemp.sum(axis=0, skipna=True)
 
 i = sum_dftemp[sum_dftemp==sum_dftemp.max()].index.values
 st.write("The maximum consumption from an appliance ", sum_dftemp.max(),", is from:",i[0] ) #Displays the maximum consumption from each appliance, and displays which one contributes the most 
-fig = ff.bar(df, x='Month', y='total_consumption') #Displays the graph representing Month vs Total Consumption
+fig = px.bar(df, x='Month', y='total_consumption') #Displays the graph representing Month vs Total Consumption
 st.plotly_chart(fig)
 
 #Creating a dropdown list displaying all the months
@@ -69,7 +69,7 @@ st.write(appliance)
 dftemp= df[appliance]
 
 
-fig= ff.line(df, x= 'Date & Time', y=dftemp) #Plotting the graph between Appliance(X-axis) and Date&Time (Y-axis)
+fig=px.line(df, x= 'Date & Time', y=dftemp) #Plotting the graph between Appliance(X-axis) and Date&Time (Y-axis)
 st.plotly_chart(fig) #Displaying it on the dashboard
 
 dftemp = df.iloc[:,5:-1]
