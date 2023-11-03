@@ -82,17 +82,4 @@ st.write("The maximum consumption from an appliance ", sum_dftemp.max(),", is fr
 
 
 
-#Code used for pandas merging 
-"""
-import pandas as pd 
 
-#Creating DataFrames with the csv files
-df1=pd.read_csv("A_result_2014.csv")
-df2=pd.read_csv("A_result_2015.csv")
-df3=pd.read_csv("A_result_2016.csv")
-
-total= pd.concat([df1, df2]) #Merging 2014 and 2015 data
-A_total= pd.concat([total, df3]) #Merging 2014, 15 and 16 year data
-
-print(A_total.shape) #Seeing the dimension of the file
-A_total.to_csv('A_total.csv') #Converting the DataFrame created to .csv file"""
